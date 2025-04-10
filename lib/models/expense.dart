@@ -95,6 +95,7 @@ class Expense {
     Category? category,
   }) =>
       Expense(
+        id: id ?? this.id,
         title: title ?? this.title,
         amount: amount ?? this.amount,
         date: date ?? this.date,
