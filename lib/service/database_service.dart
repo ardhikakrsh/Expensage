@@ -52,17 +52,31 @@ class DatabaseService {
     return expense.copyWith(id: id);
   }
 
+  // update expense by id
+  Future<int> updateExpense(Expense expense) async {
+    final db = await instance.database;
+    return await db.update(
+      tableName,
+      expense.toJson(),
+      where: '$idField = ?',
+      whereArgs: [expense.id],
+    );
+  }
+
+  // read all expenses
   Future<List<Expense?>> readAllExpenses() async {
     final db = await instance.database;
     final result = await db.query(tableName);
     return result.map((json) => Expense.fromJson(json)).toList();
   }
 
+  // delete expense by id
   Future<int> deleteExpense(int id) async {
     final db = await instance.database;
     return await db.delete(tableName, where: '$idField = ?', whereArgs: [id]);
   }
 
+  // delete all expenses
   Future<void> clearAllExpenses() async {
     final db = await instance.database;
     await db.delete(tableName);

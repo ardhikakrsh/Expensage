@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
       body: widget.expenses.isEmpty
           ? const Center(
               child: Text(
@@ -53,6 +52,7 @@ class _HomePageState extends State<HomePage> {
                     onDelete: () {
                       deleteById(expense.id!);
                     },
+                    onUpdate: widget.onRefresh,
                   ),
                 );
               },
