@@ -1,15 +1,16 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class MyNavbar extends StatefulWidget {
-  const MyNavbar({super.key});
+class MyNavbar extends StatelessWidget {
+  final int currentIndex; // Menerima index dari WidgetTree
+  final Function(int) onTap; // Callback ke WidgetTree
 
-  @override
-  State<MyNavbar> createState() => _MyNavbarState();
-}
+  const MyNavbar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
-class _MyNavbarState extends State<MyNavbar> {
-  int myIndex = 0;
   @override
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
@@ -21,16 +22,12 @@ class _MyNavbarState extends State<MyNavbar> {
       height: 64,
       activeColor: Colors.white,
       inactiveColor: Colors.white.withOpacity(0.4),
-      activeIndex: myIndex,
+      activeIndex: currentIndex, // Gunakan index dari WidgetTree
       gapLocation: GapLocation.center,
       notchSmoothness: NotchSmoothness.smoothEdge,
       leftCornerRadius: 32,
       rightCornerRadius: 32,
-      onTap: (index) {
-        setState(() {
-          myIndex = index;
-        });
-      },
+      onTap: onTap, // Panggil fungsi di WidgetTree
     );
   }
 }
