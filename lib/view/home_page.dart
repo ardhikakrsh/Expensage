@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqflite/components/my_card.dart';
-import 'package:flutter_sqflite/models/expense.dart';
-import 'package:flutter_sqflite/service/database_service.dart';
+import 'package:expensage/components/my_card.dart';
+import 'package:expensage/models/expense.dart';
+import 'package:expensage/service/database_service.dart';
 
 class HomePage extends StatefulWidget {
   final List<Expense?> expenses;

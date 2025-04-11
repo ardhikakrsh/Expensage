@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqflite/models/expense.dart';
-import 'package:flutter_sqflite/service/database_service.dart';
+import 'package:expensage/models/expense.dart';
+import 'package:expensage/service/database_service.dart';
 
 class CreateExpense extends StatefulWidget {
   final VoidCallback onExpenseAdded;

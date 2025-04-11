@@ -1,4 +1,4 @@
-import 'package:flutter_sqflite/models/expense.dart';
+import 'package:expensage/models/expense.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 

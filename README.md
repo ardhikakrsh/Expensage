@@ -1,6 +1,8 @@
-# flutter_sqflite
+# Expensage
 
-A new Flutter project.
+| Name                   | NRP        |
+| ---------------------- | ---------- |
+| Ardhika Krishna Wijaya | 5025221006 |
 
 ## Getting Started
 

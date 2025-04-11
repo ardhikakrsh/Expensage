@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqflite/components/my_floating_button.dart';
-import 'package:flutter_sqflite/components/my_navbar.dart';
-import 'package:flutter_sqflite/models/expense.dart';
-import 'package:flutter_sqflite/service/database_service.dart';
-import 'package:flutter_sqflite/components/create_expense.dart';
-import 'package:flutter_sqflite/view/home_page.dart';
-import 'package:flutter_sqflite/view/setting_page.dart';
+import 'package:expensage/components/my_floating_button.dart';
+import 'package:expensage/components/my_navbar.dart';
+import 'package:expensage/models/expense.dart';
+import 'package:expensage/service/database_service.dart';
+import 'package:expensage/components/create_expense.dart';
+import 'package:expensage/view/home_page.dart';
+import 'package:expensage/view/setting_page.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});

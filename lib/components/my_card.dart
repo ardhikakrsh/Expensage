@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:flutter_sqflite/main.dart';
-import 'package:flutter_sqflite/models/expense.dart';
-import 'package:flutter_sqflite/service/database_service.dart';
+import 'package:expensage/main.dart';
+import 'package:expensage/models/expense.dart';
+import 'package:expensage/service/database_service.dart';
 
 class MyCard extends StatefulWidget {
   final Expense expense;

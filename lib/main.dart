@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqflite/service/database_service.dart';
-import 'package:flutter_sqflite/view/widget_tree.dart';
+import 'package:expensage/service/database_service.dart';
+import 'package:expensage/view/widget_tree.dart';
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 100, 1, 249),
