@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:expensage/components/create_expense.dart';
+import 'package:expensage/components/my_drawer.dart';
 import 'package:expensage/components/my_floating_button.dart';
 import 'package:expensage/components/my_navbar.dart';
 import 'package:expensage/models/expense.dart';
 import 'package:expensage/service/database_service.dart';
-import 'package:expensage/components/create_expense.dart';
 import 'package:expensage/view/home_page.dart';
 import 'package:expensage/view/setting_page.dart';
+import 'package:flutter/material.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -61,13 +62,16 @@ class _WidgetTreeState extends State<WidgetTree> {
           ),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
       body: screens[myIndex],
       floatingActionButton: MyFloatingButton(
         onPressed: () => addExpense(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const MyNavbar(),
+      bottomNavigationBar: MyNavbar(
+        currentIndex: myIndex,
+        onTap: onTabTapped,
+      ),
     );
   }
 
@@ -78,5 +82,11 @@ class _WidgetTreeState extends State<WidgetTree> {
         return CreateExpense(onExpenseAdded: loadExpenses);
       },
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      myIndex = index;
+    });
   }
 }
