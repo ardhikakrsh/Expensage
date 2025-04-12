@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:expensage/components/my_card.dart';
 import 'package:expensage/models/expense.dart';
 import 'package:expensage/service/database_service.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
   final List<Expense?> expenses;
@@ -32,11 +33,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widget.expenses.isEmpty
-          ? const Center(
-              child: Text(
-                'No expenses found',
-                style: TextStyle(color: Colors.white),
-              ),
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Lottie.asset(
+                  'assets/lotties/money.json',
+                ),
+                const Text(
+                  'No Expenses Found',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             )
           : ListView.builder(
               itemCount: widget.expenses.length,
