@@ -1,6 +1,6 @@
+import 'package:expensage/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:expensage/service/database_service.dart';
-import 'package:expensage/view/widget_tree.dart';
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 100, 1, 249),
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Flutter Demo',
-      home: const WidgetTree(),
+      home: const SplashScreen(),
     );
   }
 }
