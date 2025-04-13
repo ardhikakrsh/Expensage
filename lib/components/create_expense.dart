@@ -1,3 +1,4 @@
+import 'package:expensage/main.dart';
 import 'package:flutter/material.dart';
 import 'package:expensage/models/expense.dart';
 import 'package:expensage/service/database_service.dart';
@@ -108,6 +109,7 @@ class _CreateExpenseState extends State<CreateExpense> {
                     ),
                     isExpanded: true,
                     value: selectedCategory,
+                    dropdownColor: kDarkColorScheme.surface,
                     icon: const Icon(Icons.arrow_drop_down),
                     items: Category.values.map((category) {
                       return DropdownMenuItem(
